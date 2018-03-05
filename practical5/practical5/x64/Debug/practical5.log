@@ -1,0 +1,6 @@
+﻿  practical5.cpp
+c:\users\oisin\documents\repos\algorithms-and-data-structures-week-5\practical5\practical5\practical5.cpp(66): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\oisin\documents\repos\algorithms-and-data-structures-week-5\practical5\practical5\practical5.cpp(115): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\oisin\documents\repos\algorithms-and-data-structures-week-5\practical5\practical5\practical5.cpp(116): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\oisin\documents\repos\algorithms-and-data-structures-week-5\practical5\practical5\practical5.cpp(100): warning C4715: 'bracketCheck': not all control paths return a value
+  practical5.vcxproj -> C:\Users\Oisin\Documents\repos\Algorithms-and-Data-Structures-Week-5\practical5\x64\Debug\practical5.exe
