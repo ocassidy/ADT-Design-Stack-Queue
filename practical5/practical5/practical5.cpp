@@ -64,37 +64,34 @@ string infix2postfix(string infix) {
 bool bracketCheck(string expr) {
 
 	Stack<char> sStk(expr.length());
-	bool same = false;
+	bool valid = true;
 
-
-		for each (char c in expr) {
-			if (isalpha(c)) {
-				sStk.push(tolower(c));
-			}
+	for (int i = 0; i < expr.length(); i++) {
+		if (expr[i] == '{' || expr[i] == '[' || expr[i] == '(') {
+			sStk.push(tolower(i));
 		}
-
-		if (sStk.top() == '{' || sStk.top() == '[' || sStk.top() == '(') {
-
-			same = false;
-			while (!sStk.isEmpty() && same) {
-				if (sStk.top() == '}' || sStk.top() == ']' || sStk.top() == ')') {
-					same = true;
-				}
-
-				sStk.pop();
-			}
-
-			if (same == true) {
-				cout << expr << " has valid brackets." << endl;
-				return true;
+		else if (expr[i] == '}' || expr[i] == ']' || expr[i] == ')') {
+			if (sStk.isEmpty()) {
+				valid = false;
 			}
 			else {
-				cout << expr << " has invalid brackets." << endl;
-				return false;
+				char c = sStk.top();
+				sStk.pop();
+
+				if (c == '(' && expr[i] != ')' || c == '{' && expr[i] != '}' || c == '[' && expr[i] != ']') {
+					valid = false;
+				}
 			}
 		}
-		return false;
 	}
+	if (valid == true) {
+		cout << expr << " has valid brackets." << endl;
+	}
+	else if (valid == false) {
+		cout << expr << " has invalid brackets." << endl;
+	}
+	return (valid && sStk.isEmpty());
+}
 
 // Pre-Condition: infix is a valid expression containing single digit numbers
 // Post-Condition: returns the result of the expression evaluation
